@@ -1,0 +1,7 @@
+data/*
+Images/*
+*.tif
+*.tiff
+*.yaml
+*.h5
+*.tif

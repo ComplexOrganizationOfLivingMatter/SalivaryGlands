@@ -20,9 +20,9 @@ allNetworkFeatures = cell(size(pathGlands,1),1);
 totalMeanCellsFeatures = cell(size(pathGlands,1),1);
 totalStdCellsFeatures = cell(size(pathGlands,1),1);
 
-path2saveSummary = [pathKindPhenotype '_' num2str(contactThreshold) '%_'];
-
-parpool(5)
+[~,nameFolder,~] = fileparts(pathKindPhenotype);
+path2saveSummary = fullfile(pathKindPhenotype,[nameFolder '_' num2str(contactThreshold) '%_']);
+% parpool(5)
 realisticSR=zeros(size(pathGlands,1),1);
 parfor nGland = 1:size(pathGlands,1)
         

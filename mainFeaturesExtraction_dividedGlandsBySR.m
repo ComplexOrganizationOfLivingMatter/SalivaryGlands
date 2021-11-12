@@ -28,7 +28,8 @@ for nSR =1:numOfSRs
     totalMeanCellsFeatures = cell(size(pathGlands,1),1);
     totalStdCellsFeatures = cell(size(pathGlands,1),1);
 
-    path2saveSummary = [pathKindPhenotype '_' num2str(contactThreshold) '%_SR_' num2str(SRs(nSR)) ' _'];
+    [~,nameFolder,~] = fileparts(pathKindPhenotype);
+    path2saveSummary = fullfile(pathKindPhenotype,[nameFolder '_' num2str(contactThreshold) '%_SR_' num2str(SRs(nSR)) ' _']);
 
     % parpool(10)
     realisticSR=zeros(size(pathGlands,1),1);
@@ -68,7 +69,7 @@ for nSR =1:numOfSRs
 
             [allGeneralInfo{nGland},allTissues{nGland},allLumens{nGland},allHollowTissue3dFeatures{nGland},allNetworkFeatures{nGland},totalMeanCellsFeatures{nGland},totalStdCellsFeatures{nGland}]=calculate3DMorphologicalFeatures(labelledImage,apicalLayer,basalLayer,lateralLayer,lumenImage,folderFeatures,fileName,pixelScale,contactThreshold,validCells,noValidCells);
 
-            realisticSR(nGland) = calculateRealisticSR(totalMeanCellsFeatures{nGland},apicalLayer,lumenSkeleton,validCells,pixelScale,folderFeatures);
+%             realisticSR(nGland) = calculateRealisticSR(totalMeanCellsFeatures{nGland},apicalLayer,lumenSkeleton,validCells,pixelScale,folderFeatures);
     end
 
     summarizeAllTissuesProperties(allGeneralInfo,allTissues,allLumens,allHollowTissue3dFeatures,allNetworkFeatures,totalMeanCellsFeatures,totalStdCellsFeatures,path2saveSummary);

@@ -5,3 +5,12 @@ Images/*
 *.yaml
 *.h5
 *.tif
+*.fig
+*.PNG
+*.csv
+*.lif
+*.nd2
+*.jpg
+*.zip
+*.docx
+*.jpeg

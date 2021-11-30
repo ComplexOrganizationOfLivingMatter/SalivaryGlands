@@ -1,6 +1,6 @@
 mole_Names = {'E-cad'};%'Sqh-GFP';%'E-cad','Dlg+Phal\Dlg','Dlg+Phal\Phal'};
 %organFolderName = 'DrosophilaEmbryo_Carmen\';
-organFolderName = 'SalivaryGlandWT';
+organFolderName = 'SalivaryGlandEcadhi_Control';
 
 fixedStepsHeight = 0:0.0125:1;
 

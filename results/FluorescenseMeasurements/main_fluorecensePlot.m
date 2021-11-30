@@ -44,7 +44,7 @@ for nMol = mole_Names
     stdIntensities = std(totalIntensities);
     errorbar(fixedStepsHeight,meanIntensities,stdIntensities,'LineWidth',2,'Color',[0 0 0])
     xlabel('edge length (normalized)')
-    ylabel('intensity (normalized)')
+    ylabel('intensity')
     title(strrep(nMol{1},'Dlg+Phal\',''))
 
     set(gca,'FontSize', 12,'FontName','Helvetica','YGrid','on','TickDir','out','Box','off');

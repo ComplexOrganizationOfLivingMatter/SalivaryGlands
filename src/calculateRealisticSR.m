@@ -30,6 +30,9 @@ function realisticSR = calculateRealisticSR(meanCellProperties, apicalLayer,lume
     meanLumenDiameter = mean(lumenRadius2cellValidCell(~isnan(lumenRadius2cellValidCell)))*pixelScale;
     realisticSR = (meanCellProperties.Fun_cell_height+meanLumenDiameter)/meanLumenDiameter;
     
-    save(fullfile(folderFeatures,'realisticSR.mat'),'realisticSR')
+    basalRadius=meanCellProperties.Fun_cell_height+meanLumenDiameter;
+    apicalRadius=meanLumenDiameter;
+    
+    save(fullfile(folderFeatures,'realisticSR.mat'),'realisticSR','basalRadius','apicalRadius')
 
 end
